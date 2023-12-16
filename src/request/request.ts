@@ -74,7 +74,7 @@ export class HTTPRequest {
   }
 
   constructor(cookie?: string) {
-    if (cookie) this.headers.Cookie = cookie.replace("ltokenV2", "ltoken_v2").replace("ltuidV2", "ltuid_v2");
+    if (cookie) this.headers.Cookie = cookie.replace("ltokenV2", "ltoken_v2").replace("ltuidV2", "ltuid_v2") || cookie
     this.cache = new Cache()
   }
 

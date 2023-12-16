@@ -7,14 +7,24 @@ import { LanguageEnum } from '../language'
  */
 export interface ICookie {
   /**
+   * The value of the "ltoken" cookie.
+   */
+  ltoken?: string
+
+  /**
+   * The value of the "ltuid" cookie.
+   */
+  ltuid?: number
+
+  /**
    * The value of the "ltoken_v2" cookie.
    */
-  ltokenV2: string
+  ltokenV2?: string
 
   /**
    * The value of the "ltuid_v2" cookie.
    */
-  ltuidV2: number
+  ltuidV2?: number
 
   /**
    * The value of the "cookieToken" cookie, if it exists.
