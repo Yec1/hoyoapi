@@ -96,6 +96,7 @@ export const HSR_RECORD_CHARACTER_API = `${BBS_API}/game_record/hkrpg/api/avatar
 export const HSR_RECORD_INDEX_API = `${BBS_API}/game_record/hkrpg/api/index`
 export const HSR_RECORD_NOTE_API = `${BBS_API}/game_record/hkrpg/api/note`
 export const HSR_RECORD_FORGOTTEN_HALL_API = `${BBS_API}/game_record/hkrpg/api/challenge`
+export const HSR_RECORD_PURE_FICTION_API = `${BBS_API}/game_record/hkrpg/api/challenge_story`
 
 /* Honkai Impact Battle Chronicles */
 export const HI_RECORD_INDEX_API = `${BBS_API}/game_record/honkai3rd/api/index`

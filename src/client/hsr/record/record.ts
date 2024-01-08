@@ -4,6 +4,7 @@ import { HTTPRequest } from '../../../request'
 import {
   HSR_RECORD_CHARACTER_API,
   HSR_RECORD_FORGOTTEN_HALL_API,
+  HSR_RECORD_PURE_FICTION_API,
   HSR_RECORD_INDEX_API,
   HSR_RECORD_NOTE_API,
 } from '../../../routes'
@@ -13,7 +14,7 @@ import {
   IHSRNote,
   IHSRRecord,
 } from './interfaces'
-import { ForgottenHallScheduleEnum } from './record.enum'
+import { ForgottenHallScheduleEnum, ForgottenHallModeEnum } from './record.enum'
 
 /**
  * HSRRecordModule class provides methods to interact with Honkai Star Rail record module endpoints.
@@ -181,13 +182,15 @@ export class HSRRecordModule {
    * Retrieves the forgotten hall information associated with the provided region and UID.
    *
    * @param scheduleType The schedule type for the forgotten hall (optional, defaults to CURRENT).
+   * @param modeType The mod type for the forgotten hall(optional, defaults to NORMAL).
    * @returns {Promise<IHSRForgottenHall>} A Promise that resolves to the forgotten hall information object.
    * @throws {HoyoAPIError} if the region or UID parameters are missing or failed to be filled.
    * @throws {HoyoAPIError} if the given scheduleType parameter is invalid.
    * @throws {HoyoAPIError} if failed to retrieve data, please double-check the provided UID.
    */
   async forgottenHall(
-    scheduleType: ForgottenHallScheduleEnum = ForgottenHallScheduleEnum.CURRENT,
+    modeType: ForgottenHallModeEnum = ForgottenHallModeEnum.NORMAL,
+    scheduleType: ForgottenHallScheduleEnum = ForgottenHallScheduleEnum.CURRENT
   ): Promise<IHSRForgottenHall> {
     if (!this.region || !this.uid) {
       throw new HoyoAPIError('UID parameter is missing or failed to be filled')
@@ -209,12 +212,17 @@ export class HSRRecordModule {
       })
       .setDs()
 
+    const apiEndpoints = [
+        HSR_RECORD_FORGOTTEN_HALL_API,
+        HSR_RECORD_PURE_FICTION_API,
+    ];
+
     const {
       response: res,
       body,
       params,
       headers,
-    } = await this.request.send(HSR_RECORD_FORGOTTEN_HALL_API)
+    } = await this.request.send(apiEndpoints[modeType - 1])
 
     if (res.retcode !== 0) {
       throw new HoyoAPIError(
