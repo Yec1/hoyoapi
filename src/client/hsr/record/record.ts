@@ -5,6 +5,7 @@ import {
   HSR_RECORD_CHARACTER_API,
   HSR_RECORD_FORGOTTEN_HALL_API,
   HSR_RECORD_PURE_FICTION_API,
+  HSR_RECORD_STORMWIND_KNIGHT_API,
   HSR_RECORD_INDEX_API,
   HSR_RECORD_NOTE_API,
 } from '../../../routes'
@@ -190,7 +191,7 @@ export class HSRRecordModule {
    */
   async forgottenHall(
     modeType: ForgottenHallModeEnum = ForgottenHallModeEnum.NORMAL,
-    scheduleType: ForgottenHallScheduleEnum = ForgottenHallScheduleEnum.CURRENT
+    scheduleType: ForgottenHallScheduleEnum = ForgottenHallScheduleEnum.CURRENT,
   ): Promise<IHSRForgottenHall> {
     if (!this.region || !this.uid) {
       throw new HoyoAPIError('UID parameter is missing or failed to be filled')
@@ -213,9 +214,10 @@ export class HSRRecordModule {
       .setDs()
 
     const apiEndpoints = [
-        HSR_RECORD_FORGOTTEN_HALL_API,
-        HSR_RECORD_PURE_FICTION_API,
-    ];
+      HSR_RECORD_FORGOTTEN_HALL_API,
+      HSR_RECORD_PURE_FICTION_API,
+      HSR_RECORD_STORMWIND_KNIGHT_API,
+    ]
 
     const {
       response: res,

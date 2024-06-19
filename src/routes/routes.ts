@@ -6,8 +6,9 @@ import { GamesEnum } from '../client/hoyolab'
 export const BBS_API = 'https://bbs-api-os.hoyolab.com'
 export const ACCOUNT_API = 'https://api-account-os.hoyolab.com'
 export const HK4E_API = 'https://sg-hk4e-api.hoyolab.com'
-export const PUBLIC_API = `https://sg-public-api.hoyolab.com`
+export const PUBLIC_API = 'https://sg-public-api.hoyolab.com'
 export const DEFAULT_REFERER = 'https://hoyolab.com'
+export const TAKUMI_API = 'https://api-os-takumi.mihoyo.com/'
 
 /* HoYoLab API Endpoint */
 export const USER_GAMES_LIST = `${ACCOUNT_API}/account/binding/api/getUserGameRolesByCookieToken`
@@ -97,6 +98,11 @@ export const HSR_RECORD_INDEX_API = `${BBS_API}/game_record/hkrpg/api/index`
 export const HSR_RECORD_NOTE_API = `${BBS_API}/game_record/hkrpg/api/note`
 export const HSR_RECORD_FORGOTTEN_HALL_API = `${BBS_API}/game_record/hkrpg/api/challenge`
 export const HSR_RECORD_PURE_FICTION_API = `${BBS_API}/game_record/hkrpg/api/challenge_story`
+export const HSR_RECORD_STORMWIND_KNIGHT_API = `${BBS_API}/game_record/hkrpg/api/challenge_boss`
+
+/* HSR Diary */
+export const HSR_DIARY_LIST_API = `https://api-takumi.mihoyo.com/event/srledger/month_info`
+export const HSR_DIARY_DETAIL_API = `https://api-takumi.mihoyo.com/event/srledger/month_detail`
 
 /* Honkai Impact Battle Chronicles */
 export const HI_RECORD_INDEX_API = `${BBS_API}/game_record/honkai3rd/api/index`
