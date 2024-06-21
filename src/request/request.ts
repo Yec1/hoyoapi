@@ -74,7 +74,11 @@ export class HTTPRequest {
   }
 
   constructor(cookie?: string) {
-    if (cookie) this.headers.Cookie = cookie.replace("ltokenV2", "ltoken_v2").replace("ltuidV2", "ltuid_v2") || cookie
+    if (cookie)
+      this.headers.Cookie =
+        cookie
+          .replace('ltokenV2', 'ltoken_v2')
+          .replace('ltuidV2', 'ltuid_v2') || cookie
     this.cache = new Cache()
   }
 
@@ -233,6 +237,11 @@ export class HTTPRequest {
             if (res.headers['content-type'] === 'application/json') {
               try {
                 response = JSON.parse(responseString)
+
+                if ([10035, 5003, 10041, 1034].includes(response.retcode)) {
+                  reject(new HoyoAPIError('Geetest Challenge Required'))
+                }
+
                 resolve({
                   response: {
                     data: response?.data ?? null,
