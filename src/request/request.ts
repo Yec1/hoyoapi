@@ -239,7 +239,7 @@ export class HTTPRequest {
                 response = JSON.parse(responseString)
 
                 if ([10035, 5003, 10041, 1034].includes(response.retcode)) {
-                  reject(new HoyoAPIError('Geetest Challenge Required'))
+                  reject(new HoyoAPIError('Geetest Challenge Required', 10035))
                 }
 
                 resolve({

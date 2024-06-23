@@ -96,13 +96,14 @@ export const GENSHIN_TCG_CHALLANGE_DECK = `${BBS_API}/game_record/genshin/api/gc
 export const HSR_RECORD_CHARACTER_API = `${BBS_API}/game_record/hkrpg/api/avatar/info`
 export const HSR_RECORD_INDEX_API = `${BBS_API}/game_record/hkrpg/api/index`
 export const HSR_RECORD_NOTE_API = `${BBS_API}/game_record/hkrpg/api/note`
+export const HSR_RECORD_WIDGET_API = `${BBS_API}/game_record/hkrpg/aapi/widget`
 export const HSR_RECORD_FORGOTTEN_HALL_API = `${BBS_API}/game_record/hkrpg/api/challenge`
 export const HSR_RECORD_PURE_FICTION_API = `${BBS_API}/game_record/hkrpg/api/challenge_story`
-export const HSR_RECORD_STORMWIND_KNIGHT_API = `${BBS_API}/game_record/hkrpg/api/challenge_boss`
+export const HSR_RECORD_APOCALYPSE_PHANTOM_API = `${BBS_API}/game_record/hkrpg/api/challenge_boss`
 
 /* HSR Diary */
-export const HSR_DIARY_LIST_API = `https://api-takumi.mihoyo.com/event/srledger/month_info`
-export const HSR_DIARY_DETAIL_API = `https://api-takumi.mihoyo.com/event/srledger/month_detail`
+export const HSR_DIARY_LIST_API = `${TAKUMI_API}/event/srledger/month_info`
+export const HSR_DIARY_DETAIL_API = `${TAKUMI_API}/event/srledger/month_detail`
 
 /* Honkai Impact Battle Chronicles */
 export const HI_RECORD_INDEX_API = `${BBS_API}/game_record/honkai3rd/api/index`
