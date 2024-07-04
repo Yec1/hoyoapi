@@ -8,7 +8,8 @@ export const ACCOUNT_API = 'https://api-account-os.hoyolab.com'
 export const HK4E_API = 'https://sg-hk4e-api.hoyolab.com'
 export const PUBLIC_API = 'https://sg-public-api.hoyolab.com'
 export const DEFAULT_REFERER = 'https://hoyolab.com'
-export const TAKUMI_API = 'https://api-os-takumi.mihoyo.com/'
+export const TAKUMI_API = 'https://api-os-takumi.mihoyo.com'
+export const NAP_API = 'https://sg-act-nap-api.hoyolab.com'
 
 /* HoYoLab API Endpoint */
 export const USER_GAMES_LIST = `${ACCOUNT_API}/account/binding/api/getUserGameRolesByCookieToken`
@@ -21,6 +22,8 @@ const getEventName = (game: GamesEnum) => {
     return 'mani'
   } else if (game === GamesEnum.HONKAI_STAR_RAIL) {
     return 'luna/os'
+  } else if (game === GamesEnum.ZENLESS_ZONE_ZERO) {
+    return 'luna/zzz/os'
   }
 
   return ''
@@ -34,6 +37,8 @@ const getEventBaseUrl = (game: GamesEnum) => {
     game === GamesEnum.HONKAI_STAR_RAIL
   ) {
     return PUBLIC_API
+  } else if (game === GamesEnum.ZENLESS_ZONE_ZERO) {
+    return NAP_API
   }
 
   return ''
@@ -46,6 +51,8 @@ const getActId = (game: GamesEnum) => {
     return 'e202110291205111'
   } else if (game === GamesEnum.HONKAI_STAR_RAIL) {
     return 'e202303301540311'
+  } else if (game == GamesEnum.ZENLESS_ZONE_ZERO) {
+    return 'e202406031448091'
   }
 
   return ''
@@ -104,6 +111,12 @@ export const HSR_RECORD_APOCALYPSE_PHANTOM_API = `${BBS_API}/game_record/hkrpg/a
 /* HSR Diary */
 export const HSR_DIARY_LIST_API = `${TAKUMI_API}/event/srledger/month_info`
 export const HSR_DIARY_DETAIL_API = `${TAKUMI_API}/event/srledger/month_detail`
+
+/* ZZZ Battle Chronicles */
+export const ZZZ_RECORD_INDEX_API = `${NAP_API}/event/game_record_zzz/api/zzz/index`
+export const ZZZ_RECORD_CHARACTER_API = `${NAP_API}/event/game_record_zzz/api/zzz/info` // /info?id_list[]=1041 <-- Character ID
+export const ZZZ_RECORD_NOTE_API = `${NAP_API}/event/game_record_zzz/api/zzz/note`
+export const ZZZ_RECORD_SHIYU_DEFENSE_API = `${BBS_API}/event/game_record_zzz/api/zzz/challenge`
 
 /* Honkai Impact Battle Chronicles */
 export const HI_RECORD_INDEX_API = `${BBS_API}/game_record/honkai3rd/api/index`

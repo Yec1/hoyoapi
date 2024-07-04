@@ -2,6 +2,7 @@ export enum GamesEnum {
   GENSHIN_IMPACT = 'hk4e_global',
   HONKAI_IMPACT = 'bh3_global',
   HONKAI_STAR_RAIL = 'hkrpg_global',
+  ZENLESS_ZONE_ZERO = 'nap_global',
 }
 
 import { ICookie } from '../../cookie'
@@ -17,7 +18,15 @@ export interface IHoyolabOptions {
    * The cookie used to authenticate the request. This can be either a string or an {@link ICookie} object.
    */
   cookie:
-    | Pick<ICookie, 'ltoken' | 'ltuid' | 'ltokenV2' | 'ltuidV2' | 'cookieToken' | 'cookieTokenV2'>
+    | Pick<
+        ICookie,
+        | 'ltoken'
+        | 'ltuid'
+        | 'ltokenV2'
+        | 'ltuidV2'
+        | 'cookieToken'
+        | 'cookieTokenV2'
+      >
     | string
 
   /**
