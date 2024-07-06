@@ -80,8 +80,8 @@ export const DAILY_CLAIM_API = (game: GamesEnum) => {
 
 /* Redeem API Endpoint */
 export const GENSHIN_REDEEM_CLAIM_API = `${HK4E_API}/common/apicdkey/api/webExchangeCdkey`
-export const HSR_REDEEM_CLAIM_API = `${HKRPG_API}/event/srledger/api/webExchangeCdkey`
-export const HI_REDEEM_CLAIM_API = `${HKRPG_API}/event/srledger/api/webExchangeCdkey` // This is not correct api
+export const HSR_REDEEM_CLAIM_API = `${HKRPG_API}/common/apicdkey/api/webExchangeCdkey`
+export const HI_REDEEM_CLAIM_API = `${HKRPG_API}/common/apicdkey/api/webExchangeCdkey` // This is not correct api
 export const ZZZ_REDEEM_CLAIM_API = `https://public-operation-nap.hoyoverse.com/common/apicdkey/api/webExchangeCdkey`
 
 /* Genshin Impact Battle Chronicles */
