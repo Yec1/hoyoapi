@@ -8,6 +8,7 @@ import { DEFAULT_REFERER } from '../../routes'
 import { getHsrRegion } from './hsr.helper'
 import { GamesEnum, Hoyolab, IGame } from '../hoyolab'
 import { HSRRecordModule } from './record'
+import { HSRDiaryEnum, HSRDiaryModule, HSRDiaryMonthEnum } from './diary'
 
 /**
  * Class representing the Honkai Star Rail game.
@@ -28,6 +29,12 @@ export class HonkaiStarRail {
    *
    */
   readonly redeem: RedeemModule
+
+  /**
+   * The `HSRDiaryModule` object provides an interface to interact with the user diary feature in Honkai Star Rail.
+   *
+   */
+  readonly diary: HSRDiaryModule
 
   /**
    * The `HSRRecordModule` object provides an interface to interact with the user record feature in Honkai Star Rails.
@@ -114,6 +121,12 @@ export class HonkaiStarRail {
       this.uid,
     )
     this.record = new HSRRecordModule(
+      this.request,
+      this.lang,
+      this.region,
+      this.uid,
+    )
+    this.diary = new HSRDiaryModule(
       this.request,
       this.lang,
       this.region,
@@ -214,6 +227,32 @@ export class HonkaiStarRail {
   dailyClaim() {
     /* c8 ignore next 3 */
     return this.daily.claim()
+  }
+
+  /**
+   * Returns the diary information of a given month for a user
+   *
+   * @param month
+   * @alias {@link HonkaiStarRail.diary | HSR.diary.list()}
+   * @deprecated Use through {@link HonkaiStarRail.diary | HSR.diary.list()} instead
+   */
+  async diaryList(month: HSRDiaryMonthEnum = HSRDiaryMonthEnum.CURRENT) {
+    return this.diary.list(month)
+  }
+
+  /**
+   * Returns the diary details of a given type and month for a user
+   *
+   * @param type HSRDiaryEnum
+   * @param month DiaryMonthEnum
+   * @alias {@link HonkaiStarRail.diary | HSR.diary.detail()}
+   * @deprecated Use through {@link HonkaiStarRail.diary | HSR.diary.detail()} instead
+   */
+  async diaryDetail(
+    type: HSRDiaryEnum,
+    month: HSRDiaryMonthEnum = HSRDiaryMonthEnum.CURRENT,
+  ) {
+    return this.diary.detail(type, month)
   }
 
   /**
