@@ -3,7 +3,12 @@ import { LanguageEnum } from '../../language'
 import { HTTPRequest } from '../../request'
 import { IRedeemCode } from './redeem.interface'
 import { HoyoAPIError } from '../../error'
-import { REDEEM_CLAIM_API } from '../../routes'
+import {
+  ZZZ_REDEEM_CLAIM_API,
+  GENSHIN_REDEEM_CLAIM_API,
+  HI_REDEEM_CLAIM_API,
+  HSR_REDEEM_CLAIM_API,
+} from '../../routes'
 
 /**
  * Class representing the Redeem module for Genshin Impact's Hoyolab API.
@@ -45,15 +50,22 @@ export class RedeemModule {
     }
 
     this.request.setQueryParams({
+      t: Date.now(),
+      lang: this.lang,
+      game_biz: this.game,
       uid: this.uid,
       region: this.region,
-      game_biz: this.game,
       cdkey: code.replace(/\uFFFD/g, ''),
-      lang: this.lang.toString().split('-')[0],
-      sLangKey: this.lang,
     })
 
-    const { response } = await this.request.send(REDEEM_CLAIM_API, 'GET', 0)
+    const redeemAPI = {
+      hk4e_global: GENSHIN_REDEEM_CLAIM_API,
+      hkrpg_global: HSR_REDEEM_CLAIM_API,
+      bh3_global: HI_REDEEM_CLAIM_API,
+      nap_global: ZZZ_REDEEM_CLAIM_API,
+    }
+
+    const { response } = await this.request.send(redeemAPI[this.game], 'GET', 0)
 
     return response as IRedeemCode
   }

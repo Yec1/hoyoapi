@@ -74,11 +74,14 @@ export class HTTPRequest {
   }
 
   constructor(cookie?: string) {
-    if (cookie)
+    if (cookie) {
+      console.log(cookie)
       this.headers.Cookie =
         cookie
           .replace('ltokenV2', 'ltoken_v2')
           .replace('ltuidV2', 'ltuid_v2') || cookie
+      console.log(this.headers.Cookie)
+    }
     this.cache = new Cache()
   }
 

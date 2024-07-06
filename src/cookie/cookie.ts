@@ -24,6 +24,7 @@ export class Cookie {
       'ltoken',
       'ltuid',
       'ltoken_v2',
+      'ltmid_v2',
       'ltuid_v2',
       'account_id',
       'cookie_token',
@@ -46,7 +47,11 @@ export class Cookie {
 
       cookies.set(key, val)
 
-      if (['ltuid', 'ltuid_v2', 'account_id', 'account_id_v2'].includes(cookieSplited[0])) {
+      if (
+        ['ltuid', 'ltuid_v2', 'account_id', 'account_id_v2'].includes(
+          cookieSplited[0],
+        )
+      ) {
         cookies.set(key, parseInt(cookies.get(key), 10))
       } else if (cookieSplited[0] === 'mi18nLang') {
         cookies.set(key, Language.parseLang(cookies.get(key)))
@@ -67,7 +72,10 @@ export class Cookie {
       cookies.set('accountIdV2', accountId || ltuid)
     }
 
-    if ((!cookies.get('ltoken') || !cookies.get('ltuid')) && (!cookies.get('ltokenV2') || !cookies.get('ltuidV2'))) {
+    if (
+      (!cookies.get('ltoken') || !cookies.get('ltuid')) &&
+      (!cookies.get('ltokenV2') || !cookies.get('ltuidV2'))
+    ) {
       throw new HoyoAPIError('Cookie key ltuid or ltoken doesnt exist !')
     }
 

@@ -17,6 +17,11 @@ export interface ICookie {
   ltuid?: number
 
   /**
+   * The value of the "ltmid_v2" cookie.
+   */
+  ltmidV2?: string
+
+  /**
    * The value of the "ltoken_v2" cookie.
    */
   ltokenV2?: string
