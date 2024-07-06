@@ -1,10 +1,10 @@
 import { IHoyolabOptions } from '../hoyolab'
 
 export enum ZZZRegion {
-  USA = 'prod_gf_usa',
-  EUROPE = 'prod_gf_eur',
+  USA = 'prod_gf_us',
+  EUROPE = 'prod_gf_eu',
   ASIA = 'prod_gf_jp',
-  CHINA_TAIWAN = 'prod_gf_cht',
+  CHINA_TAIWAN = 'prod_gf_sg',
 }
 
 export type ZZZRegionKeyType = keyof typeof ZZZRegion
