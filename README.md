@@ -39,14 +39,14 @@ For Yarn <br/>
 
 ## Features
 
-| Features          | Genshin Impact     | Honkai Impact      | Honkai Star Rails  |
-| ----------------- | ------------------ | ------------------ | ------------------ |
-| Daily Check-In    | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Redeem            | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Battle Chronicles | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Diary             | :white_check_mark: | :x:                | :x:                |
-| Daily Note        | :white_check_mark: | :x:                | :white_check_mark: |
-| TCG               | :white_check_mark: | :x:                | :x:                |
+| Features          | Genshin Impact     | Honkai Impact      | Honkai Star Rails  | Zenless Zone Zero  |
+| ----------------- | ------------------ | ------------------ | ------------------ | ------------------ |
+| Daily Check-In    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Redeem            | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Battle Chronicles | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x:                |
+| Diary             | :white_check_mark: | :x:                | :x:                | :x:                |
+| Daily Note        | :white_check_mark: | :x:                | :white_check_mark: | :white_check_mark: |
+| TCG               | :white_check_mark: | :x:                | :x:                | :x:                |
 
 ## How to obtain HoYoLab Cookie
 
