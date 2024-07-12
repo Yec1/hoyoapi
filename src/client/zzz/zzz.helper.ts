@@ -9,20 +9,20 @@ import { ZZZRegion, ZZZRegionKeyType } from './zzz.interface'
  * @throws `HoyoAPIError` when the UID is invalid.
  */
 export function getZZZRegion(uid: number): ZZZRegion {
-  const server_region = Number(uid.toString().trim().slice(0, 1))
+  const server_region = Number(uid.toString().trim().slice(0, 2))
   let key: string
 
   switch (server_region) {
-    case 6:
+    case 10:
       key = 'USA'
       break
-    case 7:
+    case 15:
       key = 'EUROPE'
       break
-    case 1:
+    case 13:
       key = 'ASIA'
       break
-    case 9:
+    case 17:
       key = 'CHINA_TAIWAN'
       break
     default:
