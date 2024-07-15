@@ -6,6 +6,7 @@ import {
   ZZZ_RECORD_CHARACTER_API,
   ZZZ_RECORD_NOTE_API,
   ZZZ_RECORD_SHIYU_DEFENSE_API,
+  ZZZ_RECORD_CHARACTER_LIST_API,
 } from '../../../routes'
 import {
   IZZZCharacterFull,
@@ -37,6 +38,53 @@ export class ZZZRecordModule {
     private region: string | null,
     private uid: number | null,
   ) {}
+
+  /**
+   * Retrieves the characters associated with the provided region and UID.
+   *
+   * @returns {Promise<IZZZCharacterFull[]>} A Promise that resolves to an array of full ZZZ characters.
+   * @throws {HoyoAPIError} if the region or UID parameters are missing or failed to be filled.
+   * @throws {HoyoAPIError} if failed to retrieve data, please double-check the provided UID.
+   */
+  async characters(): Promise<IZZZCharacterFull[]> {
+    if (!this.region || !this.uid) {
+      throw new HoyoAPIError('UID parameter is missing or failed to be filled')
+    }
+
+    this.request
+      .setQueryParams({
+        server: this.region,
+        role_id: this.uid,
+        lang: this.lang,
+      })
+      .setDs(true)
+
+    const {
+      response: res,
+      body,
+      params,
+      headers,
+    } = await this.request.send(ZZZ_RECORD_CHARACTER_LIST_API)
+
+    if (res.retcode !== 0) {
+      throw new HoyoAPIError(
+        res.message ??
+          'Failed to retrieve data, please double-check the provided UID.',
+        res.retcode,
+        {
+          response: res,
+          request: {
+            body,
+            headers,
+            params,
+          },
+        },
+      )
+    }
+
+    const data = res.data as any
+    return data.avatar_list as IZZZCharacterFull[]
+  }
 
   /**
    * Retrieves the character associated with the provided region and UID.

@@ -118,7 +118,9 @@ export const HSR_DIARY_DETAIL_API = `${HKRPG_API}/event/srledger/month_detail`
 
 /* ZZZ Battle Chronicles */
 export const ZZZ_RECORD_INDEX_API = `${NAP_API}/event/game_record_zzz/api/zzz/index`
-export const ZZZ_RECORD_CHARACTER_API = `${NAP_API}/event/game_record_zzz/api/zzz/info` // /info?id_list[]=1041 <-- Character ID
+export const ZZZ_BANBOO_API = `${NAP_API}/event/game_record_zzz/api/zzz/buddy/info`
+export const ZZZ_RECORD_CHARACTER_LIST_API = `${NAP_API}/event/game_record_zzz/api/zzz/avatar/basic`
+export const ZZZ_RECORD_CHARACTER_API = `${NAP_API}/event/game_record_zzz/api/zzz/avatar/info` // /info?id_list[]=1041 <-- Character ID
 export const ZZZ_RECORD_NOTE_API = `${NAP_API}/event/game_record_zzz/api/zzz/note`
 export const ZZZ_RECORD_SHIYU_DEFENSE_API = `${BBS_API}/event/game_record_zzz/api/zzz/challenge`
 

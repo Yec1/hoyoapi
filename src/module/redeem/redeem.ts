@@ -51,9 +51,9 @@ export class RedeemModule {
 
     this.request.setQueryParams({
       t: Date.now(),
-      lang: ["zh-tw", "zh-cn"].includes(this.lang) 
-        ? this.lang 
-        : this.lang.toString().split("-")[0],
+      lang: ['zh-tw', 'zh-cn'].includes(this.lang)
+        ? this.lang
+        : this.lang.toString().split('-')[0],
       game_biz: this.game,
       uid: this.uid,
       region: this.region,
