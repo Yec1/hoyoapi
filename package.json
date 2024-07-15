@@ -82,10 +82,10 @@
       "ts-node/register"
     ]
   },
-  "packageManager": "^npm@9.0.0",
   "devDependencies": {
     "@commitlint/cli": "17.6.6",
     "@commitlint/config-conventional": "17.6.6",
+    "@eslint/js": "^9.7.0",
     "@types/eslint": "latest",
     "@types/node": "20.3.3",
     "@types/prettier": "latest",
@@ -97,8 +97,9 @@
     "concurrently": "^8.0.1",
     "dotenv": "^16.0.3",
     "esbuild": "^0.18.0",
-    "eslint": "8.44.0",
+    "eslint": "9.x",
     "eslint-config-prettier": "8.8.0",
+    "globals": "^15.8.0",
     "husky": "8.0.3",
     "lint-staged": "13.2.3",
     "nock": "^13.3.0",
