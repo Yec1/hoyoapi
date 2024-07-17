@@ -122,7 +122,7 @@ export const ZZZ_BANBOO_API = `${NAP_API}/event/game_record_zzz/api/zzz/buddy/in
 export const ZZZ_RECORD_CHARACTER_LIST_API = `${NAP_API}/event/game_record_zzz/api/zzz/avatar/basic`
 export const ZZZ_RECORD_CHARACTER_API = `${NAP_API}/event/game_record_zzz/api/zzz/avatar/info` // /info?id_list[]=1041 <-- Character ID
 export const ZZZ_RECORD_NOTE_API = `${NAP_API}/event/game_record_zzz/api/zzz/note`
-export const ZZZ_RECORD_SHIYU_DEFENSE_API = `${BBS_API}/event/game_record_zzz/api/zzz/challenge`
+export const ZZZ_RECORD_SHIYU_DEFENSE_API = `${NAP_API}/event/game_record_zzz/api/zzz/challenge`
 
 /* Honkai Impact Battle Chronicles */
 export const HI_RECORD_INDEX_API = `${BBS_API}/game_record/honkai3rd/api/index`
