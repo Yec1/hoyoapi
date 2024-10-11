@@ -45,6 +45,10 @@ export class DailyModule {
       })
       .setLang(this.lang)
 
+    if (this.game === GamesEnum.ZENLESS_ZONE_ZERO) {
+      this.request.setSign('zzz')
+    }
+
     const {
       response: res,
       body,

@@ -130,6 +130,18 @@ export class HTTPRequest {
   }
 
   /**
+   * Set x-rpc-signgame
+   *
+   * @param sign x-rpc-signgame that used for return of API (default: Language.ENGLISH).
+   * @returns {this}
+   */
+  setSign(sign: string): this {
+    this.headers['x-rpc-signgame'] = sign
+
+    return this
+  }
+
+  /**
    * Set to used Dynamic Security or not
    *
    * @param flag boolean Flag indicating whether to use dynamic security or not (default: true).
