@@ -10,7 +10,7 @@ export const HKRPG_API = 'https://sg-hkrpg-api.hoyoverse.com'
 export const PUBLIC_API = 'https://sg-public-api.hoyolab.com'
 export const DEFAULT_REFERER = 'https://hoyolab.com'
 export const TAKUMI_API = 'https://api-os-takumi.mihoyo.com'
-export const NAP_API = 'https://sg-act-nap-api.hoyolab.com'
+export const NAP_API = 'https://sg-public-api.hoyolab.com'
 
 /* HoYoLab API Endpoint */
 export const USER_GAMES_LIST = `${ACCOUNT_API}/account/binding/api/getUserGameRolesByCookieToken`
