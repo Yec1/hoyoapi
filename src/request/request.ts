@@ -135,8 +135,8 @@ export class HTTPRequest {
    * @param sign x-rpc-signgame that used for return of API (default: Language.ENGLISH).
    * @returns {this}
    */
-  setSign(lang: string): this {
-    this.headers['x-rpc-signgame'] = lang
+  setSign(sign: string): this {
+    this.headers['x-rpc-signgame'] = sign
 
     return this
   }
