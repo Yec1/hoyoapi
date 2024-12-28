@@ -6,7 +6,7 @@ import { GamesEnum } from '../client/hoyolab'
 export const BBS_API = 'https://bbs-api-os.hoyolab.com'
 export const ACCOUNT_API = 'https://api-account-os.hoyolab.com'
 export const HK4E_API = 'https://sg-hk4e-api.hoyolab.com'
-export const HKRPG_API = 'https://sg-hkrpg-api.hoyoverse.com'
+export const HKRPG_API = 'https://sg-public-api.hoyolab.com'
 export const PUBLIC_API = 'https://sg-public-api.hoyolab.com'
 export const DEFAULT_REFERER = 'https://hoyolab.com'
 export const TAKUMI_API = 'https://api-os-takumi.mihoyo.com'
@@ -80,7 +80,7 @@ export const DAILY_CLAIM_API = (game: GamesEnum) => {
 
 /* Redeem API Endpoint */
 export const GENSHIN_REDEEM_CLAIM_API = `${HK4E_API}/common/apicdkey/api/webExchangeCdkey`
-export const HSR_REDEEM_CLAIM_API = `${HKRPG_API}/common/apicdkey/api/webExchangeCdkey`
+export const HSR_REDEEM_CLAIM_API = `https://public-operation-hkrpg.hoyoverse.com/common/apicdkey/api/webExchangeCdkey`
 export const HI_REDEEM_CLAIM_API = `${HKRPG_API}/common/apicdkey/api/webExchangeCdkey` // This is not correct api
 export const ZZZ_REDEEM_CLAIM_API = `https://public-operation-nap.hoyoverse.com/common/apicdkey/api/webExchangeCdkey`
 
