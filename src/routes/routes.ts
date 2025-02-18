@@ -6,7 +6,7 @@ import { GamesEnum } from '../client/hoyolab'
 export const BBS_API = 'https://bbs-api-os.hoyolab.com'
 export const ACCOUNT_API = 'https://api-account-os.hoyolab.com'
 export const HK4E_API = 'https://sg-hk4e-api.hoyolab.com'
-export const HKRPG_API = 'https://sg-public-api.hoyolab.com'
+export const HKRPG_API = 'https://sg-hkrpg-api.hoyoverse.com'
 export const PUBLIC_API = 'https://sg-public-api.hoyolab.com'
 export const DEFAULT_REFERER = 'https://hoyolab.com'
 export const TAKUMI_API = 'https://api-os-takumi.mihoyo.com'
@@ -14,7 +14,7 @@ export const NAP_API = 'https://sg-public-api.hoyolab.com'
 
 /* HoYoLab API Endpoint */
 export const USER_GAMES_LIST = `${ACCOUNT_API}/account/binding/api/getUserGameRolesByCookieToken`
-export const GAME_RECORD_CARD_API = `${BBS_API}/game_record/card/wapi/getGameRecordCard`
+export const GAME_RECORD_CARD_API = `${PUBLIC_API}/event/game_record/card/wapi/getGameRecordCard`
 
 const getEventName = (game: GamesEnum) => {
   if (game == GamesEnum.GENSHIN_IMPACT) {
@@ -80,7 +80,7 @@ export const DAILY_CLAIM_API = (game: GamesEnum) => {
 
 /* Redeem API Endpoint */
 export const GENSHIN_REDEEM_CLAIM_API = `${HK4E_API}/common/apicdkey/api/webExchangeCdkey`
-export const HSR_REDEEM_CLAIM_API = `https://public-operation-hkrpg.hoyoverse.com/common/apicdkey/api/webExchangeCdkey`
+export const HSR_REDEEM_CLAIM_API = `${HKRPG_API}/common/apicdkey/api/webExchangeCdkey`
 export const HI_REDEEM_CLAIM_API = `${HKRPG_API}/common/apicdkey/api/webExchangeCdkey` // This is not correct api
 export const ZZZ_REDEEM_CLAIM_API = `https://public-operation-nap.hoyoverse.com/common/apicdkey/api/webExchangeCdkey`
 
@@ -104,25 +104,25 @@ export const GENSHIN_TCG_CHALLANGE_RECORD = `${BBS_API}/game_record/genshin/api/
 export const GENSHIN_TCG_CHALLANGE_DECK = `${BBS_API}/game_record/genshin/api/gcg/challenge/deck`
 
 /* HSR Battle Chronicles */
-export const HSR_RECORD_CHARACTER_API = `${BBS_API}/game_record/hkrpg/api/avatar/info`
-export const HSR_RECORD_INDEX_API = `${BBS_API}/game_record/hkrpg/api/index`
-export const HSR_RECORD_NOTE_API = `${BBS_API}/game_record/hkrpg/api/note`
-export const HSR_RECORD_WIDGET_API = `${BBS_API}/game_record/hkrpg/aapi/widget`
-export const HSR_RECORD_FORGOTTEN_HALL_API = `${BBS_API}/game_record/hkrpg/api/challenge`
-export const HSR_RECORD_PURE_FICTION_API = `${BBS_API}/game_record/hkrpg/api/challenge_story`
-export const HSR_RECORD_APOCALYPSE_PHANTOM_API = `${BBS_API}/game_record/hkrpg/api/challenge_boss`
+export const HSR_RECORD_CHARACTER_API = `${PUBLIC_API}/event//game_record/hkrpg/api/avatar/info`
+export const HSR_RECORD_INDEX_API = `${PUBLIC_API}/event//game_record/hkrpg/api/index`
+export const HSR_RECORD_NOTE_API = `${PUBLIC_API}/event//game_record/hkrpg/api/note`
+export const HSR_RECORD_WIDGET_API = `${PUBLIC_API}/event//game_record/hkrpg/aapi/widget`
+export const HSR_RECORD_FORGOTTEN_HALL_API = `${PUBLIC_API}/event/game_record/hkrpg/api/challenge`
+export const HSR_RECORD_PURE_FICTION_API = `${PUBLIC_API}/event/game_record/hkrpg/api/challenge_story`
+export const HSR_RECORD_APOCALYPSE_PHANTOM_API = `${PUBLIC_API}/event/game_record/hkrpg/api/challenge_boss`
 
 /* HSR Diary */
 export const HSR_DIARY_LIST_API = `${HKRPG_API}/event/srledger/month_info`
 export const HSR_DIARY_DETAIL_API = `${HKRPG_API}/event/srledger/month_detail`
 
 /* ZZZ Battle Chronicles */
-export const ZZZ_RECORD_INDEX_API = `${NAP_API}/event/game_record_zzz/api/zzz/index`
-export const ZZZ_BANBOO_API = `${NAP_API}/event/game_record_zzz/api/zzz/buddy/info`
-export const ZZZ_RECORD_CHARACTER_LIST_API = `${NAP_API}/event/game_record_zzz/api/zzz/avatar/basic`
-export const ZZZ_RECORD_CHARACTER_API = `${NAP_API}/event/game_record_zzz/api/zzz/avatar/info` // /info?id_list[]=1041 <-- Character ID
-export const ZZZ_RECORD_NOTE_API = `${NAP_API}/event/game_record_zzz/api/zzz/note`
-export const ZZZ_RECORD_SHIYU_DEFENSE_API = `${NAP_API}/event/game_record_zzz/api/zzz/challenge`
+export const ZZZ_RECORD_INDEX_API = `${PUBLIC_API}/event/game_record_zzz/api/zzz/index`
+export const ZZZ_BANBOO_API = `${PUBLIC_API}/event/game_record_zzz/api/zzz/buddy/info`
+export const ZZZ_RECORD_CHARACTER_LIST_API = `${PUBLIC_API}/event/game_record_zzz/api/zzz/avatar/basic`
+export const ZZZ_RECORD_CHARACTER_API = `${PUBLIC_API}/event/game_record_zzz/api/zzz/avatar/info` // /info?id_list[]=1041 <-- Character ID
+export const ZZZ_RECORD_NOTE_API = `${PUBLIC_API}/event/game_record_zzz/api/zzz/note`
+export const ZZZ_RECORD_SHIYU_DEFENSE_API = `${PUBLIC_API}/event/game_record_zzz/api/zzz/challenge`
 
 /* Honkai Impact Battle Chronicles */
 export const HI_RECORD_INDEX_API = `${BBS_API}/game_record/honkai3rd/api/index`
