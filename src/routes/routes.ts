@@ -79,42 +79,42 @@ export const DAILY_CLAIM_API = (game: GamesEnum) => {
 }
 
 /* Redeem API Endpoint */
-export const GENSHIN_REDEEM_CLAIM_API = `${HK4E_API}/common/apicdkey/api/webExchangeCdkey`
-export const HSR_REDEEM_CLAIM_API = `${HKRPG_API}/common/apicdkey/api/webExchangeCdkey`
+export const GENSHIN_REDEEM_CLAIM_API = `https://public-operation-hk4e.hoyoverse.com/common/apicdkey/api/webExchangeCdkey`
+export const HSR_REDEEM_CLAIM_API = `https://public-operation-hkrpg.hoyoverse.com/common/apicdkey/api/webExchangeCdkey`
 export const HI_REDEEM_CLAIM_API = `${HKRPG_API}/common/apicdkey/api/webExchangeCdkey` // This is not correct api
 export const ZZZ_REDEEM_CLAIM_API = `https://public-operation-nap.hoyoverse.com/common/apicdkey/api/webExchangeCdkey`
 
 /* Genshin Impact Battle Chronicles */
-export const GENSHIN_RECORD_INDEX_API = `${BBS_API}/game_record/genshin/api/index`
-export const GENSHIN_RECORD_CHARACTER_API = `${BBS_API}/game_record/genshin/api/character`
-export const GENSHIN_RECORD_AVATAR_BASIC_INFO_API = `${BBS_API}/game_record/genshin/api/avatarBasicInfo`
-export const GENSHIN_RECORD_SPIRAL_ABYSS_API = `${BBS_API}/game_record/genshin/api/spiralAbyss`
-export const GENSHIN_RECORD_DAILY_NOTE_API = `${BBS_API}/game_record/genshin/api/dailyNote`
+export const GENSHIN_RECORD_INDEX_API = `${PUBLIC_API}/event/game_record/genshin/api/index`
+export const GENSHIN_RECORD_CHARACTER_API = `${PUBLIC_API}/event/game_record/genshin/api/character`
+export const GENSHIN_RECORD_AVATAR_BASIC_INFO_API = `${PUBLIC_API}/event/game_record/genshin/api/avatarBasicInfo`
+export const GENSHIN_RECORD_SPIRAL_ABYSS_API = `${PUBLIC_API}/event/game_record/genshin/api/spiralAbyss`
+export const GENSHIN_RECORD_DAILY_NOTE_API = `${PUBLIC_API}/event/game_record/genshin/api/dailyNote`
 
 /* Genshin Impact Diary */
 export const GENSHIN_DIARY_LIST_API = `${HK4E_API}/event/ysledgeros/month_info`
 export const GENSHIN_DIARY_DETAIL_API = `${HK4E_API}/event/ysledgeros/month_detail`
 
 /* Genshin TCG Data*/
-export const GENSHIN_TCG_BASICINFO = `${BBS_API}/game_record/genshin/api/gcg/basicInfo`
-export const GENSHIN_TCG_CARDLIST = `${BBS_API}/game_record/genshin/api/gcg/cardList`
-export const GENSHIN_TCG_MATCHLIST = `${BBS_API}/game_record/genshin/api/gcg/matchList`
-export const GENSHIN_TCG_CHALLANGE_SCHEDULE = `${BBS_API}/game_record/genshin/api/gcg/challenge/schedule`
-export const GENSHIN_TCG_CHALLANGE_RECORD = `${BBS_API}/game_record/genshin/api/gcg/challenge/record`
-export const GENSHIN_TCG_CHALLANGE_DECK = `${BBS_API}/game_record/genshin/api/gcg/challenge/deck`
+export const GENSHIN_TCG_BASICINFO = `${PUBLIC_API}/event/game_record/genshin/api/gcg/basicInfo`
+export const GENSHIN_TCG_CARDLIST = `${PUBLIC_API}/event/game_record/genshin/api/gcg/cardList`
+export const GENSHIN_TCG_MATCHLIST = `${PUBLIC_API}/event/game_record/genshin/api/gcg/matchList`
+export const GENSHIN_TCG_CHALLANGE_SCHEDULE = `${PUBLIC_API}/event/game_record/genshin/api/gcg/challenge/schedule`
+export const GENSHIN_TCG_CHALLANGE_RECORD = `${PUBLIC_API}/event/game_record/genshin/api/gcg/challenge/record`
+export const GENSHIN_TCG_CHALLANGE_DECK = `${PUBLIC_API}/event/game_record/genshin/api/gcg/challenge/deck`
 
 /* HSR Battle Chronicles */
-export const HSR_RECORD_CHARACTER_API = `${PUBLIC_API}/event//game_record/hkrpg/api/avatar/info`
-export const HSR_RECORD_INDEX_API = `${PUBLIC_API}/event//game_record/hkrpg/api/index`
-export const HSR_RECORD_NOTE_API = `${PUBLIC_API}/event//game_record/hkrpg/api/note`
-export const HSR_RECORD_WIDGET_API = `${PUBLIC_API}/event//game_record/hkrpg/aapi/widget`
+export const HSR_RECORD_CHARACTER_API = `${PUBLIC_API}/event/game_record/hkrpg/api/avatar/info`
+export const HSR_RECORD_INDEX_API = `${PUBLIC_API}/event/game_record/hkrpg/api/index`
+export const HSR_RECORD_NOTE_API = `${PUBLIC_API}/event/game_record/hkrpg/api/note`
+export const HSR_RECORD_WIDGET_API = `${PUBLIC_API}/event/game_record/hkrpg/api/widget`
 export const HSR_RECORD_FORGOTTEN_HALL_API = `${PUBLIC_API}/event/game_record/hkrpg/api/challenge`
 export const HSR_RECORD_PURE_FICTION_API = `${PUBLIC_API}/event/game_record/hkrpg/api/challenge_story`
 export const HSR_RECORD_APOCALYPSE_PHANTOM_API = `${PUBLIC_API}/event/game_record/hkrpg/api/challenge_boss`
 
 /* HSR Diary */
-export const HSR_DIARY_LIST_API = `${HKRPG_API}/event/srledger/month_info`
-export const HSR_DIARY_DETAIL_API = `${HKRPG_API}/event/srledger/month_detail`
+export const HSR_DIARY_LIST_API = `${PUBLIC_API}/event/srledger/month_info`
+export const HSR_DIARY_DETAIL_API = `${PUBLIC_API}/event/srledger/month_detail`
 
 /* ZZZ Battle Chronicles */
 export const ZZZ_RECORD_INDEX_API = `${PUBLIC_API}/event/game_record_zzz/api/zzz/index`
