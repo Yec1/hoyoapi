@@ -7,14 +7,16 @@ import {
   ZZZ_RECORD_NOTE_API,
   ZZZ_RECORD_SHIYU_DEFENSE_API,
   ZZZ_RECORD_CHARACTER_LIST_API,
+  ZZZ_RECORD_DEADLY_ASSAULT_API,
 } from '../../../routes'
 import {
   IZZZCharacterFull,
   IZZZShiyuDefense,
   IZZZNote,
   IZZZRecord,
+  IZZZDeadlyAssault,
 } from './interfaces'
-import { ShiyuDefenseScheduleEnum } from './record.enum'
+import { ShiyuDefenseScheduleEnum, DeadlyAssaultScheduleEnum } from './record.enum'
 
 /**
  * ZZZRecordModule class provides methods to interact with Honkai Star Rail record module endpoints.
@@ -291,5 +293,63 @@ export class ZZZRecordModule {
     }
 
     return res.data as IZZZShiyuDefense
+  }
+
+   /**
+   * Retrieves the deadly assault information associated with the provided region and UID.
+   *
+   * @param scheduleType The schedule type for the deadly assault (optional, defaults to CURRENT).
+   * @returns {Promise<IZZZDeadlyAssault>} A Promise that resolves to the deadly assault information object.
+   * @throws {HoyoAPIError} if the region or UID parameters are missing or failed to be filled.
+   * @throws {HoyoAPIError} if the given scheduleType parameter is invalid.
+   * @throws {HoyoAPIError} if failed to retrieve data, please double-check the provided UID.
+   */
+   async deadlyAssault(
+    scheduleType: DeadlyAssaultScheduleEnum = DeadlyAssaultScheduleEnum.CURRENT,
+  ): Promise<IZZZDeadlyAssault> {
+    if (!this.region || !this.uid) {
+      throw new HoyoAPIError('UID parameter is missing or failed to be filled')
+    }
+
+    if (
+      Object.values(DeadlyAssaultScheduleEnum).includes(scheduleType) === false
+    ) {
+      throw new HoyoAPIError('The given scheduleType parameter is invalid !')
+    }
+
+    this.request
+      .setQueryParams({
+        region: this.region,
+        uid: this.uid,
+        schedule_type: scheduleType,
+        lang: this.lang,
+        need_all: 'true',
+      })
+      .setDs()
+
+    const {
+      response: res,
+      body,
+      params,
+      headers,
+    } = await this.request.send(ZZZ_RECORD_DEADLY_ASSAULT_API)
+
+    if (res.retcode !== 0) {
+      throw new HoyoAPIError(
+        res.message ??
+          'Failed to retrieve data, please double-check the provided UID.',
+        res.retcode,
+        {
+          response: res,
+          request: {
+            body,
+            headers,
+            params,
+          },
+        },
+      )
+    }
+
+    return res.data as IZZZDeadlyAssault
   }
 }
