@@ -33,7 +33,7 @@
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.mjs",
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky install && npm run build",
     "format": " npx prettier --ignore-path .gitignore \"**/*.{ts,js,json,mjs,tsx}\" -w",
     "lint": "eslint --ignore-path .gitignore \"**/*.{ts,js,json,mjs,tsx}\" --fix",
     "build": "ts-node scripts/build.ts",
