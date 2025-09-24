@@ -111,6 +111,7 @@ export const HSR_RECORD_WIDGET_API = `${PUBLIC_API}/event/game_record/hkrpg/api/
 export const HSR_RECORD_FORGOTTEN_HALL_API = `${PUBLIC_API}/event/game_record/hkrpg/api/challenge`
 export const HSR_RECORD_PURE_FICTION_API = `${PUBLIC_API}/event/game_record/hkrpg/api/challenge_story`
 export const HSR_RECORD_APOCALYPSE_PHANTOM_API = `${PUBLIC_API}/event/game_record/hkrpg/api/challenge_boss`
+export const HSR_RECORD_ANOMALY_ARBITRATION_API = `${PUBLIC_API}/event/game_record/hkrpg/api/challenge_peak`
 
 /* HSR Diary */
 export const HSR_DIARY_LIST_API = `${PUBLIC_API}/event/srledger/month_info`
