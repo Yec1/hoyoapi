@@ -125,6 +125,7 @@ export const ZZZ_RECORD_CHARACTER_API = `${PUBLIC_API}/event/game_record_zzz/api
 export const ZZZ_RECORD_NOTE_API = `${PUBLIC_API}/event/game_record_zzz/api/zzz/note`
 export const ZZZ_RECORD_SHIYU_DEFENSE_API = `${PUBLIC_API}/event/game_record_zzz/api/zzz/challenge`
 export const ZZZ_RECORD_DEADLY_ASSAULT_API = `${PUBLIC_API}/event/game_record_zzz/api/zzz/mem_detail`
+export const ZZZ_RECORD_HADAL_API = `${PUBLIC_API}/event/game_record_zzz/api/zzz/hadal_info_v2`
 
 /* Honkai Impact Battle Chronicles */
 export const HI_RECORD_INDEX_API = `${BBS_API}/game_record/honkai3rd/api/index`
