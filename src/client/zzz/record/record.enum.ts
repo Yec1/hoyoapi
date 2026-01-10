@@ -29,3 +29,19 @@ export enum DeadlyAssaultScheduleEnum {
    */
   PREVIOUS = 2,
 }
+
+/**
+ * An enum representing the schedule type for Hadal.
+ * @readonly
+ * @enum {number}
+ */
+export enum HadalScheduleEnum {
+  /**
+   * The current schedule.
+   */
+  CURRENT = 1,
+  /**
+   * The previous schedule.
+   */
+  PREVIOUS = 2,
+}

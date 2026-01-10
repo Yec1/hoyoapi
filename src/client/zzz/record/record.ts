@@ -21,6 +21,7 @@ import {
 import {
   ShiyuDefenseScheduleEnum,
   DeadlyAssaultScheduleEnum,
+  HadalScheduleEnum,
 } from './record.enum'
 
 /**
@@ -365,15 +366,22 @@ export class ZZZRecordModule {
    * @throws {HoyoAPIError} if the region or UID parameters are missing or failed to be filled.
    * @throws {HoyoAPIError} if failed to retrieve data, please double-check the provided UID.
    */
-  async hadal(): Promise<IZZZHadal> {
+  async hadalInfo(
+    scheduleType: HadalScheduleEnum = HadalScheduleEnum.CURRENT,
+  ): Promise<IZZZHadal> {
     if (!this.region || !this.uid) {
       throw new HoyoAPIError('UID parameter is missing or failed to be filled')
+    }
+
+    if (Object.values(HadalScheduleEnum).includes(scheduleType) === false) {
+      throw new HoyoAPIError('The given scheduleType parameter is invalid !')
     }
 
     this.request
       .setQueryParams({
         region: this.region,
         uid: this.uid,
+        schedule_type: scheduleType,
         lang: this.lang,
         need_all: 'true',
       })
