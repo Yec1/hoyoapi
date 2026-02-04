@@ -65,10 +65,10 @@ export class Cookie {
     if (ltuid && !accountId) {
       cookies.set('accountId', ltuid)
     } else if (!ltuid && accountId) {
-      cookies.set('ltuid' || 'ltuidV2', accountId)
+      cookies.set('ltuid', accountId)
     }
 
-    if (!accountIdV2 && (accountId || ltuid) !== null) {
+    if (!accountIdV2 && (accountId || ltuid)) {
       cookies.set('accountIdV2', accountId || ltuid)
     }
 
@@ -107,6 +107,9 @@ export class Cookie {
             'cookieTokenV2',
             'accountIdV2',
             'accountMidV2',
+            'ltokenV2',
+            'ltuidV2',
+            'ltmidV2',
           ].includes(key)
         ) {
           key = toSnakeCase(key)

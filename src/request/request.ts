@@ -75,10 +75,7 @@ export class HTTPRequest {
 
   constructor(cookie?: string) {
     if (cookie) {
-      this.headers.Cookie =
-        cookie
-          .replace('ltokenV2', 'ltoken_v2')
-          .replace('ltuidV2', 'ltuid_v2') || cookie
+      this.headers.Cookie = cookie
     }
     this.cache = new Cache()
   }
@@ -230,16 +227,16 @@ export class HTTPRequest {
           })
 
           res.on('end', () => {
-            let buffer = Buffer.concat(stream)
+            let buffer = Buffer.concat(stream as any)
 
             // Handling content compression
             const encoding = res.headers['content-encoding']
             if (encoding === 'gzip') {
-              buffer = gunzipSync(buffer)
+              buffer = gunzipSync(buffer as any)
             } else if (encoding === 'deflate') {
-              buffer = inflateSync(buffer)
+              buffer = inflateSync(buffer as any)
             } else if (encoding === 'br') {
-              buffer = brotliDecompressSync(buffer)
+              buffer = brotliDecompressSync(buffer as any)
             }
 
             // Parse to UTF-8
@@ -252,7 +249,17 @@ export class HTTPRequest {
                 response = JSON.parse(responseString)
 
                 if ([10035, 5003, 10041, 1034].includes(response.retcode)) {
+                  console.log(
+                    `[HoyoAPI] Geetest Challenge Required: ${response.retcode}`,
+                  )
                   reject(new HoyoAPIError('Geetest Challenge Required', 10035))
+                }
+
+                if (response.retcode !== 0) {
+                  console.log(
+                    `[HoyoAPI] Response mismatch: ${url} -> ${response.retcode}: ${response.message}`,
+                  )
+                  // console.log(`[HoyoAPI] Cookie sent: ${this.headers.Cookie}`)
                 }
 
                 resolve({

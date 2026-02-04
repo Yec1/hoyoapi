@@ -181,6 +181,13 @@ export class Hoyolab {
 
     const { response: res } = await this.request.send(GAME_RECORD_CARD_API)
 
+    if (res.retcode !== 0 || !res.data) {
+      throw new HoyoAPIError(
+        res.message ?? 'Failed to retrieve game record card.',
+        res.retcode,
+      )
+    }
+
     return (res as any).data.list as IGameRecordCard
   }
   /* c8 ignore stop */

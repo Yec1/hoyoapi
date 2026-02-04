@@ -362,8 +362,10 @@ export class ZZZRecordModule {
   /**
    * Retrieves the hadal information associated with the provided region and UID.
    *
-   * @returns {Promise<IZZZDeadlyAssault>} A Promise that resolves to the deadly assault information object.
+   * @param scheduleType The schedule type for the hadal (optional, defaults to CURRENT).
+   * @returns {Promise<IZZZHadal>} A Promise that resolves to the hadal information object.
    * @throws {HoyoAPIError} if the region or UID parameters are missing or failed to be filled.
+   * @throws {HoyoAPIError} if the given scheduleType parameter is invalid.
    * @throws {HoyoAPIError} if failed to retrieve data, please double-check the provided UID.
    */
   async hadalInfo(
@@ -379,8 +381,8 @@ export class ZZZRecordModule {
 
     this.request
       .setQueryParams({
-        region: this.region,
-        uid: this.uid,
+        server: this.region,
+        role_id: this.uid,
         schedule_type: scheduleType,
         lang: this.lang,
         need_all: 'true',
