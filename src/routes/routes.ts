@@ -22,7 +22,7 @@ const getEventName = (game: GamesEnum) => {
   } else if (game === GamesEnum.HONKAI_IMPACT) {
     return 'mani'
   } else if (game === GamesEnum.HONKAI_STAR_RAIL) {
-    return 'luna/os'
+    return 'luna/hkrpg/os'
   } else if (game === GamesEnum.ZENLESS_ZONE_ZERO) {
     return 'luna/zzz/os'
   }
