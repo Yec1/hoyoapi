@@ -11,6 +11,14 @@ export const PUBLIC_API = 'https://sg-public-api.hoyolab.com'
 export const DEFAULT_REFERER = 'https://hoyolab.com'
 export const TAKUMI_API = 'https://api-os-takumi.mihoyo.com'
 export const NAP_API = 'https://sg-public-api.hoyolab.com'
+export const APP_LOGIN_URL =
+  'https://sg-public-api.hoyoverse.com/account/ma-passport/api/appLoginByPassword'
+export const APP_TOKEN_EXCHANGE_URL =
+  'https://sg-public-api.hoyoverse.com/account/ma-passport/token/getBySToken'
+export const SEND_VERIFICATION_CODE_URL =
+  'https://sg-public-api.hoyoverse.com/account/ma-verifier/api/createEmailCaptchaByActionTicket'
+export const VERIFY_ACTION_TICKET_URL =
+  'https://sg-public-api.hoyolab.com/account/ma-verifier/api/verifyActionTicketPartly'
 
 /* HoYoLab API Endpoint */
 export const USER_GAMES_LIST = `${ACCOUNT_API}/account/binding/api/getUserGameRolesByCookieToken`
