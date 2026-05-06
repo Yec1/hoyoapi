@@ -142,4 +142,24 @@ export const HI_RECORD_ABYSS_API = `${BBS_API}/game_record/honkai3rd/api/latestO
 export const HI_RECORD_ELYSIAN_API = `${BBS_API}/game_record/honkai3rd/api/godWar`
 export const HI_RECORD_ARENA_API = `${BBS_API}/game_record/honkai3rd/api/battleFieldReport`
 
+/* Mimo Travel */
+export const MIMO_BASE_API = `${PUBLIC_API}/event/e2023mimotravel`
+export const MIMO_INDEX_API = `${MIMO_BASE_API}/index`
+export const MIMO_TASK_LIST_API = `${MIMO_BASE_API}/task-list`
+export const MIMO_FINISH_TASK_API = `${MIMO_BASE_API}/finish-task`
+export const MIMO_RECEIVE_POINT_API = `${MIMO_BASE_API}/receive-point`
+export const MIMO_EXCHANGE_LIST_API = `${MIMO_BASE_API}/exchange-list`
+export const MIMO_EXCHANGE_API = `${MIMO_BASE_API}/exchange`
+export const MIMO_LOTTERY_INFO_API = `${MIMO_BASE_API}/lottery-info`
+export const MIMO_LOTTERY_API = `${MIMO_BASE_API}/lottery`
+
+/* Wiki API */
+export const WIKI_BASE_API = `https://sg-wiki-api-static.hoyolab.com/hoyowiki`
+export const HSR_WIKI_SEARCH_API = `${WIKI_BASE_API}/hsr/wapi/search`
+export const HSR_WIKI_ENTRY_API = `${WIKI_BASE_API}/hsr/wapi/entry_page`
+export const HSR_WIKI_ENTRY_LIST_API = `${WIKI_BASE_API}/hsr/wapi/get_entry_page_list`
+export const ZZZ_WIKI_SEARCH_API = `${WIKI_BASE_API}/zzz/wapi/search`
+export const ZZZ_WIKI_ENTRY_API = `${WIKI_BASE_API}/zzz/wapi/entry_page`
+export const ZZZ_WIKI_ENTRY_LIST_API = `${WIKI_BASE_API}/zzz/wapi/get_entry_page_list`
+
 /* c8 ignore stop */

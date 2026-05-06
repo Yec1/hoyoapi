@@ -2,6 +2,8 @@ import { Cookie, ICookie } from '../../cookie'
 import { Language, LanguageEnum } from '../../language'
 import { DailyModule } from '../../module/daily'
 import { RedeemModule } from '../../module/redeem'
+import { MimoModule } from '../../module/mimo'
+import { WikiModule } from '../../module/wiki'
 import { HTTPRequest } from '../../request'
 import { IHsrOptions } from './hsr.interface'
 import { DEFAULT_REFERER } from '../../routes'
@@ -41,6 +43,16 @@ export class HonkaiStarRail {
    *
    */
   readonly record: HSRRecordModule
+
+  /**
+   * The `MimoModule` object provides an interface to interact with the Mimo travel event for HSR.
+   */
+  readonly mimo: MimoModule
+
+  /**
+   * The `WikiModule` object provides an interface to search the Hoyolab HSR wiki.
+   */
+  readonly wiki: WikiModule
 
   /**
    * The cookie used for authentication.
@@ -132,6 +144,8 @@ export class HonkaiStarRail {
       this.region,
       this.uid,
     )
+    this.mimo = new MimoModule(this.request, this.lang, 6)
+    this.wiki = new WikiModule(this.request, this.lang, 'hsr')
   }
 
   /**

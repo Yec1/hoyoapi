@@ -1,6 +1,8 @@
 import { Language, LanguageEnum } from '../../language'
 import { DailyModule } from '../../module/daily'
 import { RedeemModule } from '../../module/redeem'
+import { MimoModule } from '../../module/mimo'
+import { WikiModule } from '../../module/wiki'
 import { IZZZOptions } from './zzz.interface'
 import { Cookie, ICookie } from '../../cookie'
 import { HTTPRequest } from '../../request'
@@ -35,6 +37,16 @@ export class ZenlessZoneZero {
    *
    */
   readonly record: ZZZRecordModule
+
+  /**
+   * The `MimoModule` object provides an interface to interact with the Mimo travel event for ZZZ.
+   */
+  readonly mimo: MimoModule
+
+  /**
+   * The `WikiModule` object provides an interface to search the Hoyolab ZZZ wiki.
+   */
+  readonly wiki: WikiModule
 
   /**
    * HoyYolab account object
@@ -114,6 +126,8 @@ export class ZenlessZoneZero {
       this.region,
       this.uid,
     )
+    this.mimo = new MimoModule(this.request, this.lang, 8)
+    this.wiki = new WikiModule(this.request, this.lang, 'zzz')
   }
 
   /**
